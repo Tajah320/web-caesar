@@ -6,17 +6,34 @@ app = Flask(__name__)
 app.config['DEBUG'] = True
 
 form = """
-<!doctype html>
+<!DOCTYPE html>
 
 <html>
     <head>
-        <link rel="stylesheet"  href="styles.css"/>
+        <style>
+            form {
+                background-color: #eee;
+                padding: 20px;
+                margin: 0 auto;
+                width: 540px;
+                font: 16px sans-serif;
+                border-radius: 10px;
+            }
+            textarea {
+                margin: 10px 0;
+                width: 540px;
+                height: 120px;
+            }
+            p.error {
+                color: red;
+            }
+        </style>
     </head>
-        <body>
-        <form action="/hello" method="post">
-           <label for="Rotate_by"> Rotate by:</label>   
-            <input type="text" name="rot"/>
-            <input type="textarea" name="text"/>
+    <body>
+           <form method="post">
+           <label for="rot"> Rotate by:</label>   
+            <input type="text" name="rot" value="0"/>
+            <textarea type="text" name="text"></textarea>
             <input type="submit"/>
         </form>
     </body>
